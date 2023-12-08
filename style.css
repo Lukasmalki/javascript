@@ -1,0 +1,116 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculator {
+    background: rgb(41, 41, 41);
+    width: 288px;
+    height: 450px;
+    padding: 0px 2px 2px 2px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 273px;
+    height: 100%;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 1px;
+    font-size: 30px;
+    padding-right: 15px;
+}
+
+.toprow {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2px;
+}
+
+.clear {
+    width: 214px;
+    height: 70px;
+    border: none;
+    background: darkred;
+    color: white;
+    font-size: 30px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    cursor: pointer;
+    padding: 0;
+}
+
+.divide {
+    width: 70px;
+    height: 70px;
+    border: none;
+    background-color: #464646;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.middlerows {
+    display: flex;
+    justify-content: space-around;
+}
+
+.middlerows button {
+    width: 70px;
+    height: 70px;
+    border: none;
+    font-size: 30px;
+    background-color: #464646;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 2px;
+    padding: 0;
+}
+
+.lastrow {
+    display: flex;
+    justify-content: space-around;
+}
+
+.zero {
+    width: 142.2px;
+    height: 70px;
+    border: none;
+    text-align: left;
+    padding-left: 22px;
+    font-size: 30px;
+    background-color: #464646;
+    color: white;
+    cursor: pointer;
+    padding-right: 0;
+}
+
+.comma {
+    width: 70px;
+    height: 70px;
+    border: none;
+    font-size: 30px;
+    background-color: #464646;
+    color: white;
+    cursor: pointer;
+    padding: 0;
+}
+
+.equalsign {
+    width: 70px;
+    height: 70px;
+    border: none;
+    font-size: 30px;
+    background: darkgreen;
+    color: white;
+    cursor: pointer;
+    padding: 0;
+}
