@@ -1,23 +1,52 @@
 let calculation = '';
 let display = document.querySelector('.display');
 const buttons = document.querySelectorAll('button');
+let isResult = false;
+
+let str = 'hej';
 
 function calculateNumber(number) {
-    if (calculation > 0) {
+    if (isResult === true) {
         calculation = '';
     }
+    isResult = false;
     calculation += number;
     display.innerText = calculation;
     console.log(calculation)
 }
 
+let operationObject = [];
+
 function mathOperations(operation) {
-    // if (calculation === '') {
-    //     calculation = '0';
+    // if (operationObject.length < 1) {
+    //     operationObject.push(operation)
+    //     console.log(operationObject)
+    // } else {
+    //     operationObject.splice(0, 1, operation)
+    //     console.log(operationObject)
     // }
-    calculation += operation;
-    display.innerText = calculation;
-    console.log(calculation)
+
+    if (calculation === '') {
+        calculation = 0;
+        calculation += operation;
+        display.innerText = calculation;
+    } else {
+        calculation += operation;
+        display.innerText = calculation;
+        console.log(calculation)
+    }
+    isResult = false;
+
+    if (calculation.includes(operation)) {
+        calculation.replace(operation, operation);
+    }
+    // calculation = calculation.slice(-3);
+    // console.log(lastChar)
+    // if (lastChar === operation) {
+    //     console.log('hej');
+    //     calculation.replace(lastChar, operation)
+    //     console.log(calculation)
+    // }
 }
 
 function result () {
@@ -25,4 +54,5 @@ function result () {
     calculation = eval(calculation);
     display.innerText = calculation;
     console.log(calculation)
+    isResult = true;
 }
