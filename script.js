@@ -15,6 +15,10 @@ function calculateNumber(number) {
     console.log(calculation)
 }
 
+String.prototype.replaceAt = function(index, replacement) {
+    return this.substring(0, index) + replacement + this.substring(index + replacement.length);
+}
+
 let operationObject = [];
 
 function mathOperations(operation) {
@@ -31,9 +35,19 @@ function mathOperations(operation) {
         calculation += operation;
         display.innerText = calculation;
     } else {
-        calculation += operation;
+        const displayInnertext = display.innerText;
+        if (' '+displayInnertext[displayInnertext.length-1]+' ' !== operation){
+
+            if (displayInnertext[displayInnertext.length-1] === '/' || displayInnertext[displayInnertext.length-1] === '*' || displayInnertext[displayInnertext.length-1] === '-' || displayInnertext[displayInnertext.length-1] === '+') {
+                display.innerText=display.innerText.replaceAt(display.innerText.length-2, operation)
+                calculation = display.innerText;
+            } else {
+                calculation += operation;
+
+            }
         display.innerText = calculation;
         console.log(calculation)
+    }
     }
     isResult = false;
 
